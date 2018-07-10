@@ -10,5 +10,16 @@ module.exports = {
     chunkFilename: '[name].[hunkhash].js',
     //指定文件存放路径
     path: path.resolve(__dirname, 'dist');
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'ulr-loader',
+        options: {
+          limit: 10000,
+        }
+      }
+    ]
   }
 };
